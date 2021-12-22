@@ -897,10 +897,23 @@ namespace EditorAccounts
             Form3.Show();
         }
 
-        private void txt_Leave(object sender, EventArgs e)
-        {
-            //External.CurrentChar = Chars.SelectedIndex;
 
+        private void criarContaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CriarConta newAccount = new CriarConta();
+
+            newAccount.Show();
+        }
+
+        private void alterarTodasAsSenhasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            W2___Alterador_de_senha_Global ChangePass = new W2___Alterador_de_senha_Global();
+
+            ChangePass.Show();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
             #region Informações TextBox
 
             External.g_pAcccount.Char[External.CurrentChar].name = txtNome.Text;
@@ -969,22 +982,6 @@ namespace EditorAccounts
 
             Functions.SaveAccount(External.g_pAcccount);
             labelSave.Text = string.Format("Conta {0} salva com sucesso!", External.g_pAcccount.Info.AccountName);
-
-            // LimpaLabel();
-        }
-
-        private void criarContaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CriarConta newAccount = new CriarConta();
-
-            newAccount.Show();
-        }
-
-        private void alterarTodasAsSenhasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            W2___Alterador_de_senha_Global ChangePass = new W2___Alterador_de_senha_Global();
-
-            ChangePass.Show();
         }
     }
 }

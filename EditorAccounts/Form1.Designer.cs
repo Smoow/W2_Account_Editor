@@ -155,6 +155,7 @@
             this.labelInventario = new System.Windows.Forms.Label();
             this.labelSave = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID7)).BeginInit();
@@ -200,7 +201,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(121, 20);
             this.txtNome.TabIndex = 2;
-            this.txtNome.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtLevel
             // 
@@ -208,7 +208,6 @@
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(43, 20);
             this.txtLevel.TabIndex = 3;
-            this.txtLevel.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // dataGridView1
             // 
@@ -502,7 +501,6 @@
             this.txtCoin.Name = "txtCoin";
             this.txtCoin.Size = new System.Drawing.Size(86, 20);
             this.txtCoin.TabIndex = 19;
-            this.txtCoin.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtPosY
             // 
@@ -510,7 +508,6 @@
             this.txtPosY.Name = "txtPosY";
             this.txtPosY.Size = new System.Drawing.Size(62, 20);
             this.txtPosY.TabIndex = 18;
-            this.txtPosY.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtPosX
             // 
@@ -518,7 +515,6 @@
             this.txtPosX.Name = "txtPosX";
             this.txtPosX.Size = new System.Drawing.Size(62, 20);
             this.txtPosX.TabIndex = 17;
-            this.txtPosX.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label9
             // 
@@ -545,7 +541,6 @@
             this.txtVelo.Name = "txtVelo";
             this.txtVelo.Size = new System.Drawing.Size(43, 20);
             this.txtVelo.TabIndex = 14;
-            this.txtVelo.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label7
             // 
@@ -571,7 +566,6 @@
             this.txtExp.Name = "txtExp";
             this.txtExp.Size = new System.Drawing.Size(86, 20);
             this.txtExp.TabIndex = 10;
-            this.txtExp.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label5
             // 
@@ -704,6 +698,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.saveButton);
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.txtMPatual);
             this.groupBox4.Controls.Add(this.txtMaxMP);
@@ -746,7 +741,6 @@
             this.txtMPatual.Name = "txtMPatual";
             this.txtMPatual.Size = new System.Drawing.Size(62, 20);
             this.txtMPatual.TabIndex = 37;
-            this.txtMPatual.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtMaxMP
             // 
@@ -754,7 +748,6 @@
             this.txtMaxMP.Name = "txtMaxMP";
             this.txtMaxMP.Size = new System.Drawing.Size(62, 20);
             this.txtMaxMP.TabIndex = 36;
-            this.txtMaxMP.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtHPatual
             // 
@@ -762,7 +755,6 @@
             this.txtHPatual.Name = "txtHPatual";
             this.txtHPatual.Size = new System.Drawing.Size(62, 20);
             this.txtHPatual.TabIndex = 35;
-            this.txtHPatual.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtMaxHP
             // 
@@ -770,7 +762,6 @@
             this.txtMaxHP.Name = "txtMaxHP";
             this.txtMaxHP.Size = new System.Drawing.Size(62, 20);
             this.txtMaxHP.TabIndex = 34;
-            this.txtMaxHP.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label16
             // 
@@ -805,7 +796,6 @@
             this.txtCon.Name = "txtCon";
             this.txtCon.Size = new System.Drawing.Size(62, 20);
             this.txtCon.TabIndex = 30;
-            this.txtCon.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtDex
             // 
@@ -813,7 +803,6 @@
             this.txtDex.Name = "txtDex";
             this.txtDex.Size = new System.Drawing.Size(62, 20);
             this.txtDex.TabIndex = 29;
-            this.txtDex.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtInt
             // 
@@ -821,7 +810,6 @@
             this.txtInt.Name = "txtInt";
             this.txtInt.Size = new System.Drawing.Size(62, 20);
             this.txtInt.TabIndex = 28;
-            this.txtInt.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtStr
             // 
@@ -829,7 +817,6 @@
             this.txtStr.Name = "txtStr";
             this.txtStr.Size = new System.Drawing.Size(62, 20);
             this.txtStr.TabIndex = 27;
-            this.txtStr.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label13
             // 
@@ -855,7 +842,6 @@
             this.txtCurrDef.Name = "txtCurrDef";
             this.txtCurrDef.Size = new System.Drawing.Size(62, 20);
             this.txtCurrDef.TabIndex = 24;
-            this.txtCurrDef.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtCurrAtk
             // 
@@ -863,7 +849,6 @@
             this.txtCurrAtk.Name = "txtCurrAtk";
             this.txtCurrAtk.Size = new System.Drawing.Size(62, 20);
             this.txtCurrAtk.TabIndex = 23;
-            this.txtCurrAtk.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label11
             // 
@@ -880,7 +865,6 @@
             this.txtBaseDef.Name = "txtBaseDef";
             this.txtBaseDef.Size = new System.Drawing.Size(62, 20);
             this.txtBaseDef.TabIndex = 20;
-            this.txtBaseDef.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtBaseAtk
             // 
@@ -888,7 +872,6 @@
             this.txtBaseAtk.Name = "txtBaseAtk";
             this.txtBaseAtk.Size = new System.Drawing.Size(62, 20);
             this.txtBaseAtk.TabIndex = 18;
-            this.txtBaseAtk.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label10
             // 
@@ -1007,7 +990,6 @@
             this.txtSpe3.Name = "txtSpe3";
             this.txtSpe3.Size = new System.Drawing.Size(62, 20);
             this.txtSpe3.TabIndex = 32;
-            this.txtSpe3.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtSpe2
             // 
@@ -1015,7 +997,6 @@
             this.txtSpe2.Name = "txtSpe2";
             this.txtSpe2.Size = new System.Drawing.Size(62, 20);
             this.txtSpe2.TabIndex = 31;
-            this.txtSpe2.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtSpe1
             // 
@@ -1023,7 +1004,6 @@
             this.txtSpe1.Name = "txtSpe1";
             this.txtSpe1.Size = new System.Drawing.Size(62, 20);
             this.txtSpe1.TabIndex = 30;
-            this.txtSpe1.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label20
             // 
@@ -1040,7 +1020,6 @@
             this.txtSpe0.Name = "txtSpe0";
             this.txtSpe0.Size = new System.Drawing.Size(62, 20);
             this.txtSpe0.TabIndex = 28;
-            this.txtSpe0.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label19
             // 
@@ -1092,7 +1071,6 @@
             this.txtGelo.Name = "txtGelo";
             this.txtGelo.Size = new System.Drawing.Size(62, 20);
             this.txtGelo.TabIndex = 40;
-            this.txtGelo.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtFogo
             // 
@@ -1100,7 +1078,6 @@
             this.txtFogo.Name = "txtFogo";
             this.txtFogo.Size = new System.Drawing.Size(62, 20);
             this.txtFogo.TabIndex = 39;
-            this.txtFogo.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtTrovao
             // 
@@ -1108,7 +1085,6 @@
             this.txtTrovao.Name = "txtTrovao";
             this.txtTrovao.Size = new System.Drawing.Size(62, 20);
             this.txtTrovao.TabIndex = 38;
-            this.txtTrovao.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label25
             // 
@@ -1125,7 +1101,6 @@
             this.txtSagrado.Name = "txtSagrado";
             this.txtSagrado.Size = new System.Drawing.Size(62, 20);
             this.txtSagrado.TabIndex = 36;
-            this.txtSagrado.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label26
             // 
@@ -1177,7 +1152,6 @@
             this.txtPontosSkill.Name = "txtPontosSkill";
             this.txtPontosSkill.Size = new System.Drawing.Size(62, 20);
             this.txtPontosSkill.TabIndex = 48;
-            this.txtPontosSkill.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtPontosSpe
             // 
@@ -1185,7 +1159,6 @@
             this.txtPontosSpe.Name = "txtPontosSpe";
             this.txtPontosSpe.Size = new System.Drawing.Size(62, 20);
             this.txtPontosSpe.TabIndex = 47;
-            this.txtPontosSpe.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtPontosSta
             // 
@@ -1193,7 +1166,6 @@
             this.txtPontosSta.Name = "txtPontosSta";
             this.txtPontosSta.Size = new System.Drawing.Size(62, 20);
             this.txtPontosSta.TabIndex = 46;
-            this.txtPontosSta.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label29
             // 
@@ -1211,7 +1183,6 @@
             this.txtChaos.Name = "txtChaos";
             this.txtChaos.Size = new System.Drawing.Size(62, 20);
             this.txtChaos.TabIndex = 44;
-            this.txtChaos.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // label30
             // 
@@ -1253,7 +1224,6 @@
             this.txtNum.Name = "txtNum";
             this.txtNum.Size = new System.Drawing.Size(62, 20);
             this.txtNum.TabIndex = 47;
-            this.txtNum.Leave += new System.EventHandler(this.txt_Leave);
             // 
             // txtSenha
             // 
@@ -1333,6 +1303,16 @@
             this.labelSave.Name = "labelSave";
             this.labelSave.Size = new System.Drawing.Size(0, 16);
             this.labelSave.TabIndex = 22;
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(62, 296);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(143, 23);
+            this.saveButton.TabIndex = 39;
+            this.saveButton.Text = "Salvar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // Form1
             // 
@@ -1542,6 +1522,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem criarContaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarTodasAsSenhasToolStripMenuItem;
+        private System.Windows.Forms.Button saveButton;
     }
 }
 
