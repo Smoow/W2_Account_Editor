@@ -87,6 +87,7 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.saveButton = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtMPatual = new System.Windows.Forms.TextBox();
             this.txtMaxMP = new System.Windows.Forms.TextBox();
@@ -155,7 +156,10 @@
             this.labelInventario = new System.Windows.Forms.Label();
             this.labelSave = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.saveButton = new System.Windows.Forms.Button();
+            this.listBoxAccounts = new System.Windows.Forms.ListBox();
+            this.btnBuscarConta = new System.Windows.Forms.Button();
+            this.textBoxBuscaConta = new System.Windows.Forms.TextBox();
+            this.groupBoxBuscaContas = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ID7)).BeginInit();
@@ -184,6 +188,7 @@
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxBuscaContas.SuspendLayout();
             this.SuspendLayout();
             // 
             // Chars
@@ -726,6 +731,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Status Base";
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(62, 296);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(143, 23);
+            this.saveButton.TabIndex = 39;
+            this.saveButton.Text = "Salvar";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -898,7 +913,7 @@
             this.contaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1083, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1462, 24);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1304,21 +1319,50 @@
             this.labelSave.Size = new System.Drawing.Size(0, 16);
             this.labelSave.TabIndex = 22;
             // 
-            // saveButton
+            // listBoxAccounts
             // 
-            this.saveButton.Location = new System.Drawing.Point(62, 296);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(143, 23);
-            this.saveButton.TabIndex = 39;
-            this.saveButton.Text = "Salvar";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            this.listBoxAccounts.FormattingEnabled = true;
+            this.listBoxAccounts.Location = new System.Drawing.Point(6, 53);
+            this.listBoxAccounts.Name = "listBoxAccounts";
+            this.listBoxAccounts.Size = new System.Drawing.Size(343, 498);
+            this.listBoxAccounts.TabIndex = 23;
+            this.listBoxAccounts.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // btnBuscarConta
+            // 
+            this.btnBuscarConta.Location = new System.Drawing.Point(146, 24);
+            this.btnBuscarConta.Name = "btnBuscarConta";
+            this.btnBuscarConta.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarConta.TabIndex = 24;
+            this.btnBuscarConta.Text = "Buscar";
+            this.btnBuscarConta.UseVisualStyleBackColor = true;
+            this.btnBuscarConta.Click += new System.EventHandler(this.btnBuscarConta_Click);
+            // 
+            // textBoxBuscaConta
+            // 
+            this.textBoxBuscaConta.Location = new System.Drawing.Point(6, 25);
+            this.textBoxBuscaConta.Name = "textBoxBuscaConta";
+            this.textBoxBuscaConta.Size = new System.Drawing.Size(134, 20);
+            this.textBoxBuscaConta.TabIndex = 25;
+            // 
+            // groupBoxBuscaContas
+            // 
+            this.groupBoxBuscaContas.Controls.Add(this.listBoxAccounts);
+            this.groupBoxBuscaContas.Controls.Add(this.btnBuscarConta);
+            this.groupBoxBuscaContas.Controls.Add(this.textBoxBuscaConta);
+            this.groupBoxBuscaContas.Location = new System.Drawing.Point(1074, 27);
+            this.groupBoxBuscaContas.Name = "groupBoxBuscaContas";
+            this.groupBoxBuscaContas.Size = new System.Drawing.Size(358, 570);
+            this.groupBoxBuscaContas.TabIndex = 26;
+            this.groupBoxBuscaContas.TabStop = false;
+            this.groupBoxBuscaContas.Text = "Busca Rápida";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 650);
+            this.ClientSize = new System.Drawing.Size(1462, 650);
+            this.Controls.Add(this.groupBoxBuscaContas);
             this.Controls.Add(this.ID15);
             this.Controls.Add(this.ID14);
             this.Controls.Add(this.ID12);
@@ -1391,6 +1435,8 @@
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBoxBuscaContas.ResumeLayout(false);
+            this.groupBoxBuscaContas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1523,6 +1569,10 @@
         private System.Windows.Forms.ToolStripMenuItem criarContaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarTodasAsSenhasToolStripMenuItem;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.ListBox listBoxAccounts;
+        private System.Windows.Forms.Button btnBuscarConta;
+        private System.Windows.Forms.TextBox textBoxBuscaConta;
+        private System.Windows.Forms.GroupBox groupBoxBuscaContas;
     }
 }
 

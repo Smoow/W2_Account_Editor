@@ -30,13 +30,23 @@ namespace EditorAccounts
             this.dataGridView2.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
             this.dataGridView2.AllowUserToResizeRows = false;
 
-            //ReadContas();
+
+            ReadContas("");
         }
 
-        //private void ReadContas()
-        //{
-        //    ClassLocalizador.ReadAccounts();
-        //}
+        private void ReadContas(string search)
+        {
+            int flag = 0;
+            ClassLocalizador.ReadAccounts();
+            foreach (var conta in External.g_pContas)
+            {
+                if (flag == 1)
+                    if (conta.Info.AccountName.Contains(search))
+                        listBoxAccounts.Items.Add(conta.Info.AccountName);
+
+                flag = 1;
+            }
+        }
 
         public void UpdateInfo()
         {
@@ -982,6 +992,105 @@ namespace EditorAccounts
 
             Functions.SaveAccount(External.g_pAcccount);
             labelSave.Text = string.Format("Conta {0} salva com sucesso!", External.g_pAcccount.Info.AccountName);
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                txtNome.Text = "";
+                txtLevel.Text = "";
+                txtExp.Text = "";
+                txtCoin.Text = "";
+                txtSpe0.Text = "";
+                txtVelo.Text = "";
+                txtBaseAtk.Text = "";
+                txtBaseDef.Text = "";
+                txtCurrAtk.Text = "";
+                txtCurrDef.Text = "";
+                txtStr.Text = "";
+                txtInt.Text = "";
+                txtDex.Text = "";
+                txtCon.Text = "";
+                txtMaxHP.Text = "";
+                txtMaxMP.Text = "";
+                txtHPatual.Text = "";
+                txtMPatual.Text = "";
+                txtGuild.Text = "";
+                txtFogo.Text = "";
+                txtTrovao.Text = "";
+                txtSagrado.Text = "";
+                txtGelo.Text = "";
+                txtChaos.Text = "";
+                txtPontosSkill.Text = "";
+                txtPontosSpe.Text = "";
+                txtPontosSta.Text = "";
+                txtSpe1.Text = "";
+                txtSpe2.Text = "";
+                txtSpe3.Text = "";
+                txtPontosSpe.Text = "";
+                txtPosX.Text = "";
+                txtPosY.Text = "";
+                txtLogin.Text = "";
+                txtSenha.Text = "";
+                txtNum.Text = "";
+
+                this.dataGridView1.Rows.Clear();
+                this.dataGridView2.Rows.Clear();
+                Functions.ReadItemList();
+                Functions.LoadAccount("./account/" + listBoxAccounts.SelectedItem.ToString()[0] + "/" + listBoxAccounts.SelectedItem.ToString());
+                UpdateInfo();
+                this.Chars.Text = "Selecione...";
+
+                txtLogin.Text = External.g_pAcccount.Info.AccountName.ToString();
+
+                txtSenha.Text = External.g_pAcccount.Info.AccountPass.ToString();
+
+                for (int i = 0; i < 6; i++)
+                {
+                    if (!string.IsNullOrEmpty(External.g_pAcccount.Info.NumericToken[i].ToString()))
+                    {
+                        txtNum.Text += External.g_pAcccount.Info.NumericToken[i].ToString() + " ";
+                    }
+                }
+
+                string CurImg = @"./imagens/0.png";
+
+                for (int i = 0; i < 128; i++)
+                {
+                    int item = External.g_pAcccount.Cargo[i].sIndex;
+
+                    string szFile = "./imagens/" + External.g_pAcccount.Cargo[i].sIndex + ".png";
+                    if (!File.Exists(szFile))
+                    {
+                        szFile = "./imagens/" + External.g_pAcccount.Cargo[i].sIndex + ".jpg";
+                        if (!File.Exists(szFile))
+                            szFile = CurImg;
+                    }
+
+                    var Imagem = Image.FromFile(szFile);
+                    this.dataGridView2.Rows.Add(i, Imagem, External.g_pAcccount.Cargo[i].sIndex, External.g_pAcccount.Cargo[i].sEffect[0].cEfeito, External.g_pAcccount.Cargo[i].sEffect[0].cValue, External.g_pAcccount.Cargo[i].sEffect[1].cEfeito, External.g_pAcccount.Cargo[i].sEffect[1].cValue, External.g_pAcccount.Cargo[i].sEffect[2].cEfeito, External.g_pAcccount.Cargo[i].sEffect[2].cValue);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnBuscarConta_Click(object sender, EventArgs e)
+        {
+            listBoxAccounts.Items.Clear();
+            int flag = 0;
+            foreach (var conta in External.g_pContas)
+            {
+                if (flag == 1)
+                    if (conta.Info.AccountName.ToLower().Contains(textBoxBuscaConta.Text.ToLower()))
+                        listBoxAccounts.Items.Add(conta.Info.AccountName);
+
+                flag = 1;
+            }
         }
     }
 }

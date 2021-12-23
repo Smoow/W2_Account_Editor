@@ -43,14 +43,14 @@ namespace EditorAccounts
                             {
                                 encontradosPorConta += contas.Cargo[i].sEffect[0].cValue;
                                 encontrados += (contas.Cargo[i].sEffect[0].cValue);
-                            } 
-                            else 
+                            }
+                            else
                             {
                                 encontradosPorConta += 1;
                                 encontrados++;
                             }
                         }
-                        
+
                     }
 
                     for (int i = 0; i < 64; i++)

@@ -32,7 +32,7 @@ namespace EditorAccounts
                 return;
             }
 
-            
+
             int index = Convert.ToInt32(txtLogin.Text);
             int count = 0;
             foreach (Structs.STRUCT_ACCOUNTFILE mob in External.ContasLocalizadas)
